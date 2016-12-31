@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css" integrity="sha256-wT6CFc7EKRuf7uyVfi+MQNHUzojuHN2pSw0YWFt2K5E=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body style="background: rgba(0, 0, 0, 0)">
+    <div class="ui modal">
+        <div class="header">Debuger</div>
+        <div class="content">
+            <div class="ui form">
+                <div class="field">
+                    <label>Code</label>
+                    <textarea placeholder="Code can be put here..."></textarea>
+                </div>
+                <div class="field">
+                    <label>Output</label>
+                    <textarea placeholder="Stuff can be output here..." disabled rows="2"></textarea>
+                </div>
+                <div class="field">
+                    <label>Targets</label>
+                    <div class="ui fluid multiple search selection dropdown">
+                        <input type="hidden" name="user">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Select Player</div>
+                        <div class="menu">
+                            <div class="item" data-value="server">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/9cbe42d6d2366bb638f3e42d1b1d75b5.jpg"> Server
+                            </div>
+                            <div class="item" data-value="global">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/0b6bb3c289af7727ce95e9f4b3b3584d.jpg"> Global
+                            </div>
+                            <div class="item" data-value="global">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/0b6bb3c289af7727ce95e9f4b3b3584d.jpg"> Local
+                            </div>
+                            <div class="item" data-value="jenny">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/239f56c16557bad6c7ac3356ac5213db.png"> Jenny Hess
+                            </div>
+                            <div class="item" data-value="elliot">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/239f56c16557bad6c7ac3356ac5213db.png"> Elliot Fu
+                            </div>
+                            <div class="item" data-value="stevie">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/239f56c16557bad6c7ac3356ac5213db.png"> Stevie Feliciano
+                            </div>
+                            <div class="item" data-value="christian">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/239f56c16557bad6c7ac3356ac5213db.png"> Christian
+                            </div>
+                            <div class="item" data-value="matt">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/239f56c16557bad6c7ac3356ac5213db.png"> Matt
+                            </div>
+                            <div class="item" data-value="justen">
+                                <img class="ui mini avatar image" src="https://i.gyazo.com/239f56c16557bad6c7ac3356ac5213db.png"> Justen Kitsune
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui green inverted button">Execute</div>
+            <div class="ui red cancel button">Close</div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js" integrity="sha256-flVaeawsBV96vCHiLmXn03IRJym7+ZfcLVvUWONCas8=" crossorigin="anonymous"></script>
+    <script src="/javascripts/debug.js"></script>
+</body>
+
+</html>
