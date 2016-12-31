@@ -7,6 +7,8 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <button type="button" name="button" onclick="resourceCall('API.showShard(\'Agim\',2000);');">Agim</button>
+    <button type="button" name="button" onclick="API.resourceEval('API.showShard(\'Agim\',2000)')">Agim Eval</button>
+    <button type="button" name="button" onclick="resourceCall('eval','API.showShard(\'Agim\',2000)')">Agim Call 1</button>
+    <button type="button" name="button" onclick="resourceCall('API.showShard','Agim',2000);">Agim Call 2</button>
   </body>
 </html>
