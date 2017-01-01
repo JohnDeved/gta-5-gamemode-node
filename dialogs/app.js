@@ -25,7 +25,7 @@ mysqlVerify = (socialclub_id, session_id) => {
 
         connection.query('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\'', function(err, results, fields) {
 
-            if(results[0].session_id) {
+            if(results[0]) {
                 result = (results[0].session_id == session_id);
                 console.log("RES: ",result);
                 connection.end();
