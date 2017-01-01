@@ -21,7 +21,7 @@ mysqlVerify = (socialclub_id, session_id) => {
 
         console.log('The query is: ',('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\''));
         console.log('The session_id is: ', session_id);
-        console.log('The solution is: ', results[0].solution);
+        console.log('The solution is: ', results[0]);
         console.log('The result is: ', results[0] == session_id);
     });
 
