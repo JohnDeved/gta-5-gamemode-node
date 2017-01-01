@@ -29,11 +29,9 @@ mysqlVerify = (socialclub_id, session_id) => {
             
             result = (results[0].session_id == session_id);
             console.log("RES: ",result);
+            connection.end();
+            return result;
         });
-
-        connection.end();
-
-        return result;
     }
 }
 
