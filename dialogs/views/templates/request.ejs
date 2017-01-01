@@ -3,14 +3,15 @@
         $('#<%=(Object.keys(buttons)[i]) %>').click(function () {
             var args = ""
             <% if (buttons[(Object.keys(buttons)[i])].isFnc) { %>
-                function unUnicode (str) {
+                function unUnicode(str) {
                     newStr = ""
                     for (var i = 0; i < str.split(' ').length; i++) {
                         newStr += String.fromCharCode(str.split(' ')[i])
                     }
-                    return newStr
+                    return newStr.substr(0,newStr.length-1);
                 }
                 args = eval(unUnicode('<%=buttons[(Object.keys(buttons)[i])].args %>'))
+                console.log(args);
             <% } else { %>
                 args = '<%=buttons[(Object.keys(buttons)[i])].args %>'
             <% } %>
