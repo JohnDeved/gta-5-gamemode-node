@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
 mysqlVerify = (socialclub_id, session_id) => {
-    result = false;
+    result = "asdfg";
 
     if(!socialclub_id || !session_id) {
         console.log("Invalid!");
