@@ -3,6 +3,8 @@ var request = require('request');
 var router = express.Router();
 
 GTARequest(router, '/:playerID?/:sessionID?', 'start', {
+    playerID: req.params.playerID,
+    sessionID: req.params.sessionID,
     buttons: {
         abbrechen: {
             command: 'CEF_CLOSE',
