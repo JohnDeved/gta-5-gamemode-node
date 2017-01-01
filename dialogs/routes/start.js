@@ -34,7 +34,7 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         if (result) {
             res.setHeader('Access-Control-Allow-Origin', 'http://185.62.188.120:3001/');
 
-            res.render('debug', {
+            res.render('start', {
                 playerID: req.params.playerID,
                 sessionID: req.params.sessionID,
                 buttons: {
