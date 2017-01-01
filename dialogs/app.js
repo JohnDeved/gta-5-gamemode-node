@@ -9,13 +9,6 @@ var request = require('request');
 GTARequest = (router, req, res, renderPage, renderPageParms) => {
     console.log(req.params)
 
-    var toUnicode = (str) => {
-        newStr = ""
-        for (var i = 0; i < str.length; i++) {
-            newStr += str.charCodeAt(i) + ' '
-        }
-        return newStr
-    }
     mysqlVerify = (socialclub_id, session_id) => {
       request({
           url: 'http://185.62.188.120:3001/VerifyUser',
