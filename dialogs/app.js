@@ -16,12 +16,13 @@ mysqlVerify = (socialclub_id, session_id) => {
 
     connection.connect();
 
-    connection.query('SELECT session_id FROM security WHERE socialclub_id="'+ socialclub_id +'"', function(err, rows, fields) {
+    connection.query('SELECT * FROM `books` WHERE `author` = ?', ['David'], function (error, results, fields) {
+    connection.query('SELECT * FROM security WHERE socialclub_id="'+ socialclub_id +'"', ['session_id'], function(err, results, fields) {
         if (err) throw err;
 
         console.log('The session_id is: ', session_id);
-        console.log('The solution is: ', rows[0].solution);
-        console.log('The result is: ', rows[0].solution == session_id);
+        console.log('The solution is: ', results[0]);
+        console.log('The result is: ', results[0] == session_id);
     });
 
     connection.end();
