@@ -30,7 +30,7 @@ mysqlVerify = (socialclub_id, session_id) => {
                 connection.end();
                 return result;
             });
-        } catch {
+        } catch(e) {
             return false;
         }
     }
