@@ -4,7 +4,7 @@
             console.log('smth clicked')
             var args = ""
             <% if (buttons[(Object.keys(buttons)[i])].isFnc) { %>
-                var unUnicode = function () {
+                function unUnicode (str) {
                     newStr = ""
                     for (var i = 0; i < str.split(' ').length; i++) {
                         newStr += String.fromCharCode(str.split(' ')[i])
