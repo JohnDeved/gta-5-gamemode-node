@@ -5,9 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var result = false;
 
 mysqlVerify = (socialclub_id, session_id) => {
-    global._ = (result = false);
+    result = false;
 
     if(!socialclub_id || !session_id) {
         console.log("Invalid!");
