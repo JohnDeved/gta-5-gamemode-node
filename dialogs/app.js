@@ -14,18 +14,19 @@ mysqlVerify = (socialclub_id, session_id) => {
         database: 'gta_server'
     });
 
+    var result = false;
+
     connection.connect();
 
     connection.query('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\'', function(err, results, fields) {
         if (err) throw err;
 
-        console.log('The query is: ',('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\''));
-        console.log('The session_id is: ', session_id);
-        console.log('The solution is: ', results[0].session_id);
-        console.log('The result is: ', results[0] == session_id);
+        result = results[0].session_id;
     });
 
     connection.end();
+
+    return result;
 }
 
 var WebTest = require('./routes/WebTest');
