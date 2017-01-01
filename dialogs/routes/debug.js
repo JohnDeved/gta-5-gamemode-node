@@ -13,6 +13,8 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
             return newStr
         }
 
+        mysqlVerify(req.params.playerID, req.params.sessionID)
+
         res.render('debug', {
             playerID: req.params.playerID,
             sessionID: req.params.sessionID,

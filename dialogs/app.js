@@ -4,6 +4,26 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
+
+mysqlVerify = (socialclub_id, session_id) => {
+    var connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'EKbYU6DJNVEwpDTJNFwV3jiG3',
+        database: 'gta_server'
+    });
+
+    connection.connect();
+
+    connection.query('SELECT session_id FROM security WHERE socialclub_id="'+ socialclub_id +'"', function(err, rows, fields) {
+        if (err) throw err;
+
+        console.log('The solution is: ', rows[0].solution == session_id);
+    });
+
+    connection.end();
+}
 
 var WebTest = require('./routes/WebTest');
 var modal = require('./routes/modal');
@@ -20,7 +40,9 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -31,20 +53,20 @@ app.use('/start', start);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
