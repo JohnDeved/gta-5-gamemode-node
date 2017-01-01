@@ -1,15 +1,30 @@
 <script type="text/javascript">
     <% for (var i = 0; i < Object.keys(buttons).length; i++) { %>
         $('#<%=(Object.keys(buttons)[i]) %>').click(function () {
-            console.log('smth clicked');
-            function toHex(a){for(var b="",c=0;c<a.length;c++)b+=a.charCodeAt(c).toString(16);return b}
-            playerID = toHex('<%=playerID %>')
-            sessionID = toHex('<%=sessionID %>')
+            console.log('smth clicked')
+            var args = ""
+            <% if (buttons[(Object.keys(buttons)[i])].isFnc) { %>
+                var unUnicode = (str) => {
+                    newStr = ""
+                    for (var i = 0; i < str.split(' ').length; i++) {
+                        newStr += String.fromCharCode(str.split(' ')[i])
+                    }
+                    return newStr
+                }
+                args = eval(unUnicode('<%=buttons[(Object.keys(buttons)[i])].args %>'))
+            <% } else { %>
+                args = '<%=buttons[(Object.keys(buttons)[i])].args %>'
+            <% } %>
             $.ajax({
                 url: 'http://185.62.188.120:3001/',
                 type: 'POST',
                 dataType: 'JSON',
-                data: {param1: 'value1'}
+                data: {
+                    socialclub_id: '<%=playerID %>',
+                    session_id: '<%=sessionID %>',
+                    command: '<%=buttons[(Object.keys(buttons)[i])].command %>',
+                    args: args
+                }
             })
         })
     <% } %>
