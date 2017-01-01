@@ -4,26 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var request = require('request');
 
-mysqlVerify = (socialclub_id, session_id) => {
-  request({
-      url: 'http://185.62.188.120:3001/VerifyUser',
-      method: 'post',
-      form: {
-        socialclub_id: socialclub_id,
-        session_id: session_id
-      }
-  }, function *(error, response, body){
-      if(error) {
-          return false;
-      } else {
-          console.log(response.statusCode, body);
-          return body == "1";
-      }
-  });
-  return true;
-}
 
 var WebTest = require('./routes/WebTest');
 var modal = require('./routes/modal');
