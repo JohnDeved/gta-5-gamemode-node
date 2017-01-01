@@ -1,5 +1,3 @@
-$('.ui.modal')
-.modal({
+$('.ui.modal').modal({
   closable: false
-})
-.modal('show')
+}).modal('show')
