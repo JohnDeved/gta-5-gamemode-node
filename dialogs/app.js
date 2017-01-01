@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
 mysqlVerify = (socialclub_id, session_id) => {
-    document.result = false;
+    global._ = (result = false);
 
     if(!socialclub_id || !session_id) {
         console.log("Invalid!");
@@ -24,10 +24,10 @@ mysqlVerify = (socialclub_id, session_id) => {
         connection.query('SELECT IFNULL((SELECT (session_id = \''+session_id+'\') FROM security WHERE socialclub_id=\''+socialclub_id+'\'),0) AS valid', function(err, results, fields) {
             console.log("RES: ",(results[0].valid));
             connection.end();
-            document.result = (results[0].valid == 1);
+            result = (results[0].valid == 1);
         });
     }
-    return document.result;
+    return result;
 }
 
 var WebTest = require('./routes/WebTest');
