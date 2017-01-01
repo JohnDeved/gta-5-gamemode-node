@@ -1,7 +1,6 @@
 <script type="text/javascript">
     <% for (var i = 0; i < Object.keys(buttons).length; i++) { %>
         $('#<%=(Object.keys(buttons)[i]) %>').click(function () {
-            console.log('smth clicked')
             var args = ""
             <% if (buttons[(Object.keys(buttons)[i])].isFnc) { %>
                 function unUnicode (str) {
