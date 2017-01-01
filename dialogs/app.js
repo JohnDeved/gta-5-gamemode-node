@@ -4,38 +4,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
-var result = false;
-var done = false;
+var request = require('request');
 
 mysqlVerify = (socialclub_id, session_id) => {
-    result = false;
-    done = false;
-
-    if(!socialclub_id || !session_id) {
-        console.log("Invalid!");
-        return false;
-    } else {
-        var connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'EKbYU6DJNVEwpDTJNFwV3jiG3',
-            database: 'gta_server'
-        });
-
-        connection.connect();
-
-        connection.query('SELECT IFNULL((SELECT (session_id = \''+session_id+'\') FROM security WHERE socialclub_id=\''+socialclub_id+'\'),0) AS valid', function(err, results, fields) {
-            console.log("RES: ",(results[0].valid));
-            connection.end();
-            result = (results[0].valid == 1);
-            done = true;
-        });
-
-        while(!done) {}
-
-        return result;
-    }
+    request.post({
+      headers: {'content-type' : 'application/x-www-form-urlencoded'},
+      url:     'http://localhost/test2.php',
+      body:    "mes=heydude"
+    }, function(error, response, body){
+      console.log(body);
+    });
 }
 
 var WebTest = require('./routes/WebTest');
