@@ -8,28 +8,30 @@ var mysql = require('mysql');
 
 mysqlVerify = (socialclub_id, session_id) => {
 
-    if(!socialclub_id || !session_id) return false;
+    if(!socialclub_id || !session_id) {
+        return false
+    } else {
+        var connection = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'EKbYU6DJNVEwpDTJNFwV3jiG3',
+            database: 'gta_server'
+        });
 
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'EKbYU6DJNVEwpDTJNFwV3jiG3',
-        database: 'gta_server'
-    });
+        var result = false;
 
-    var result = false;
+        connection.connect();
 
-    connection.connect();
+        connection.query('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\'', function(err, results, fields) {
+            if (err) throw err;
 
-    connection.query('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\'', function(err, results, fields) {
-        if (err) throw err;
+            result = results[0].session_id;
+        });
 
-        result = results[0].session_id;
-    });
+        connection.end();
 
-    connection.end();
-
-    return result;
+        return result;
+    }
 }
 
 var WebTest = require('./routes/WebTest');
