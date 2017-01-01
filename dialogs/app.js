@@ -9,7 +9,7 @@ var request = require('request');
 mysqlVerify = (socialclub_id, session_id) => {
     request.post({
       url: 'http://185.62.188.120:3001/VerifyUser',
-      formData: {socialclub_id, session_id}
+      json: {socialclub_id, session_id}
     }, function(error, response, body){
       console.log(body);
       return body;
