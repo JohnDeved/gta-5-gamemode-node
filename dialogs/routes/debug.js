@@ -19,7 +19,7 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
             buttons: {
                 execute: {
                     command: 'ADMIN_EVAL',
-                    args: toUnicode('document.getElementById("code").value'),
+                    args: toUnicode('$("#code").val()'),
                     isFnc: true
                 },
                 close: {
