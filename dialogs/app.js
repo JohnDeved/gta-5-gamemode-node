@@ -16,7 +16,6 @@ mysqlVerify = (socialclub_id, session_id) => {
 
     connection.connect();
 
-    connection.query('SELECT * FROM `books` WHERE `author` = ?', ['David'], function (error, results, fields) {
     connection.query('SELECT * FROM security WHERE socialclub_id="'+ socialclub_id +'"', ['session_id'], function(err, results, fields) {
         if (err) throw err;
 
