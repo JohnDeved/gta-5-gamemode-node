@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    window.ServerRequest = (command, args) => {
+        $.ajax({
+            url: 'http://185.62.188.120:3001/',
+            type: 'POST',
+            dataType: 'JSON',
+            data: {
+                socialclub_id: '<%=playerID %>',
+                session_id: '<%=sessionID %>',
+                command: command,
+                args: args
+            }
+        })
+    }
+</script>

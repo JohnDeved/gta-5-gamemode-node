@@ -22,10 +22,10 @@
             </p>
         </div>
         <div class="actions">
-            <div class="ui red basic cancel inverted button" onclick="">
+            <div class="ui red basic cancel inverted button" onclick="ServerRequest('PLAYER_DISCONNECT', 'bye')">
                 <i class="remove icon"></i> No
             </div>
-            <div class="ui green ok inverted button" onclick="">
+            <div class="ui green ok inverted button" onclick="ServerRequest('CEF_CLOSE', 'debugCEF')">
                 <i class="checkmark icon"></i> Yes
             </div>
         </div>
@@ -34,6 +34,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js" integrity="sha256-flVaeawsBV96vCHiLmXn03IRJym7+ZfcLVvUWONCas8=" crossorigin="anonymous"></script>
     <script src="/javascripts/modal.js"></script>
+    <% include templates/request.ejs %>
 </body>
 
 </html>

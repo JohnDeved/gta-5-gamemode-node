@@ -16,7 +16,7 @@
             <div class="ui form">
                 <div class="field">
                     <label>Code</label>
-                    <textarea placeholder="Code can be put here..."></textarea>
+                    <textarea id="code" placeholder="Code can be put here..."></textarea>
                 </div>
                 <div class="field">
                     <label>Output</label>
@@ -56,38 +56,15 @@
             </div>
         </div>
         <div class="actions">
-            <div class="ui green inverted button">Execute</div>
-            <div class="ui red cancel button">Close</div>
+            <div class="ui green inverted button" onclick="ServerRequest('ADMIN_EVAL', $('#code').val()">Execute</div>
+            <div class="ui red cancel button" onclick="ServerRequest('CEF_CLOSE', 'debugCEF')">Close</div>
         </div>
     </div>
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js" integrity="sha256-flVaeawsBV96vCHiLmXn03IRJym7+ZfcLVvUWONCas8=" crossorigin="anonymous"></script>
     <script src="/javascripts/debug.js"></script>
-    <script type="text/javascript">
-        window.ServerRequest = (command, args) => {
-            $.ajax({
-                url: 'http://localhost:3001/',
-                type: 'POST',
-                dataType: 'JSON',
-                data: {
-                    socialclub_id: '<%=playerID %>',
-                    session_id: '<%=sessionID %>',
-                    command: command,
-                    args: args
-                }
-            })
-            .done(function() {
-                console.log("success")
-            })
-            .fail(function() {
-                console.log("error")
-            })
-            .always(function() {
-                console.log("complete")
-            })
-        }
-    </script>
+    <% include templates/request.ejs %>
 </body>
 
 </html>
