@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var result = false;
+var done = false;
 
 mysqlVerify = (socialclub_id, session_id) => {
     result = false;
