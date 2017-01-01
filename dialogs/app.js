@@ -8,9 +8,8 @@ var request = require('request');
 
 mysqlVerify = (socialclub_id, session_id) => {
     request.post({
-      headers: {'content-type' : 'JSON'},
-      url:     'http://185.62.188.120:3001/VerifyUser',
-      body:    {socialclub_id, session_id}
+      url: 'http://185.62.188.120:3001/VerifyUser',
+      formData: {socialclub_id, session_id}
     }, function(error, response, body){
       console.log(body);
       return body;
