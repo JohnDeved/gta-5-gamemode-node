@@ -8,10 +8,9 @@ var mysql = require('mysql');
 var result = false;
 
 mysqlVerify = (socialclub_id, session_id) => {
-    result = false;
-
     if(!socialclub_id || !session_id) {
         console.log("Invalid!");
+        return false;
     } else {
         var connection = mysql.createConnection({
             host: 'localhost',
@@ -26,9 +25,9 @@ mysqlVerify = (socialclub_id, session_id) => {
             console.log("RES: ",(results[0].valid));
             connection.end();
             result = (results[0].valid == 1);
+            return true;
         });
     }
-    return result;
 }
 
 var WebTest = require('./routes/WebTest');
