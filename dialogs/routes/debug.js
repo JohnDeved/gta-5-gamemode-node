@@ -7,7 +7,11 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         res.setHeader('Access-Control-Allow-Origin', 'http://185.62.188.120:3001/');
         res.render('debug', {
             playerID: req.params.playerID,
-            sessionID: req.params.sessionID
+            sessionID: req.params.sessionID,
+            buttons: {
+                execute: {},
+                close: {}
+            }
         });
     } else {
         res.render('invalid');
