@@ -19,7 +19,9 @@ mysqlVerify = (socialclub_id, session_id) => {
     connection.query('SELECT session_id FROM security WHERE socialclub_id="'+ socialclub_id +'"', function(err, rows, fields) {
         if (err) throw err;
 
-        console.log('The solution is: ', rows[0].solution == session_id);
+        console.log('The session_id is: ', session_id);
+        console.log('The solution is: ', rows[0].solution);
+        console.log('The result is: ', rows[0].solution == session_id);
     });
 
     connection.end();
