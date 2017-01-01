@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/:playerID?/:sessionID?', function(req, res, next) {
     console.log(req.params);
-    if (req.params.playerID !== undefined && req.params.playerID !== undefined && mysqlVerify(req.params.playerID, req.params.sessionID)) {
+    if (mysqlVerify(req.params.playerID, req.params.sessionID)) {
         res.setHeader('Access-Control-Allow-Origin', 'http://185.62.188.120:3001/');
         var toUnicode = (str) => {
             newStr = ""

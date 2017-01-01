@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
 mysqlVerify = (socialclub_id, session_id) => {
+
+    if(!socialclub_id || !session_id) return false;
+
     var connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -19,7 +22,7 @@ mysqlVerify = (socialclub_id, session_id) => {
     connection.connect();
 
     connection.query('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\'', function(err, results, fields) {
-        if (err) return result;
+        if (err) throw err;
 
         result = results[0].session_id;
     });
