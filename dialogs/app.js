@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var request = require('request');
 
-GTARequest = (router, req, res, urlParams, renderPage, renderPageParms) => {
+GTARequest = (router, req, res, renderPage, renderPageParms) => {
     console.log(req.params)
 
     var toUnicode = (str) => {

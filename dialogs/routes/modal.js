@@ -2,8 +2,8 @@ var express = require('express');
 var request = require('request');
 var router = express.Router();
 
-router.get(urlParams, function(req, res, next) {
-    GTARequest(router, req, res, '/:playerID?/:sessionID?', 'modal', {
+router.get('/:playerID?/:sessionID?', function(req, res, next) {
+    GTARequest(router, req, res, 'modal', {
         playerID: req.params.playerID,
         sessionID: req.params.sessionID,
         title: req.params.title || 'Development Server',
@@ -23,5 +23,6 @@ router.get(urlParams, function(req, res, next) {
             }
         }
     })
+})
 
 module.exports = router;
