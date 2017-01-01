@@ -22,6 +22,7 @@ mysqlVerify = (socialclub_id, session_id) => {
           return body == "1";
       }
   });
+  return true;
 }
 
 var WebTest = require('./routes/WebTest');
