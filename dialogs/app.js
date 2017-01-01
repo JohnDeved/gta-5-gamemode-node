@@ -7,7 +7,11 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
 mysqlVerify = (socialclub_id, session_id) => {
-   try {
+
+    if(!socialclub_id || !session_id) {
+        console.log("Invalid!");
+        return false;
+    } else {
         var connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
@@ -20,13 +24,17 @@ mysqlVerify = (socialclub_id, session_id) => {
         connection.connect();
 
         connection.query('SELECT session_id FROM security WHERE socialclub_id=\''+ socialclub_id +'\'', function(err, results, fields) {
-            result = (results[0].session_id == session_id);
-            console.log("RES: ",result);
-            connection.end();
-            return result;
+
+            if(results[0].session_id) {
+                result = (results[0].session_id == session_id);
+                console.log("RES: ",result);
+                connection.end();
+                return result;
+            }else{
+                console.log("Shit!");
+                return false;
+            }
         });
-    } catch(e) {
-        return false;
     }
 }
 
