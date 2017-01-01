@@ -19,14 +19,12 @@ mysqlVerify = (socialclub_id, session_id) => {
             database: 'gta_server'
         });
 
-        var result = false;
-
         connection.connect();
 
         connection.query('SELECT IFNULL((SELECT (session_id = \''+session_id+'\') FROM security WHERE socialclub_id=\''+socialclub_id+'\'),0) AS valid', function(err, results, fields) {
             console.log("RES: ",(results[0].valid));
             connection.end();
-            return(results[0].valid);
+            return results[0].valid == 1;
         });
     }
 }
