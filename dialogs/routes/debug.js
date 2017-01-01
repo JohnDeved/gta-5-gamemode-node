@@ -30,6 +30,7 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
             }
         });
     } else {
+        console.log(mysqlVerify(req.params.playerID, req.params.sessionID));
         res.render('invalid');
     }
 });
