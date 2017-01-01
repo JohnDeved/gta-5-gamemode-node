@@ -24,7 +24,7 @@ mysqlVerify = (socialclub_id, session_id) => {
         connection.query('SELECT IFNULL((SELECT (session_id = \''+session_id+'\') FROM security WHERE socialclub_id=\''+socialclub_id+'\'),0) AS valid', function(err, results, fields) {
             console.log("RES: ",(results[0].valid));
             connection.end();
-            return results[0].valid == 1;
+            return results[0].valid === 1;
         });
     }
 }
