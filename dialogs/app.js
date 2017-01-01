@@ -5,9 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
-var result = false;
 
 mysqlVerify = (socialclub_id, session_id) => {
+    result = false;
+    done = false;
+
     if(!socialclub_id || !session_id) {
         console.log("Invalid!");
         return false;
@@ -25,8 +27,12 @@ mysqlVerify = (socialclub_id, session_id) => {
             console.log("RES: ",(results[0].valid));
             connection.end();
             result = (results[0].valid == 1);
-            return true;
+            done = true;
         });
+
+        while(!done) {}
+
+        return result;
     }
 }
 
