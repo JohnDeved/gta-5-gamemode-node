@@ -18,12 +18,14 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
             execute: JSON.stringify({
                 command: 'ADMIN_EVAL',
                 args: toUnicode('$("#code").val()'),
-                isFnc: true
+                isFnc: true,
+                isObj: false
             }),
             close: JSON.stringify({
                 command: 'CEF_CLOSE',
                 args: "debugCEF",
-                isFnc: false
+                isFnc: false,
+                isObj: false
             })
         }
     })
