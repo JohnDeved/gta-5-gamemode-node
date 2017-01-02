@@ -1,6 +1,13 @@
 $('.ui.modal').modal({
-  closable: false
+    closable: false
 }).modal('show')
+
+$('#erstellen').click(function() {
+    $('#erstellen').addClass('loading')
+    $('#erstellen').removeClass('basic')
+    $('#erstellen').removeClass('green')
+    $('#erstellen').css('pointer-events', 'none')
+})
 
 checkReady = function() {
     console.log('keyup');
