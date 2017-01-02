@@ -16,8 +16,8 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         sessionID: req.params.sessionID,
         buttons: {
             abbrechen: {
-                command: 'CEF_CLOSE',
-                args: "startCEF"
+                command: 'PLAYER_DISCONNECT',
+                args: "Registrierung abgebrochen"
             },
             erstellen: {
                 command: 'REGISTER',
