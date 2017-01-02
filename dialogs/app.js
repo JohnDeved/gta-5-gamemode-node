@@ -6,6 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var request = require('request');
 
+debugModus = true;
+
+var toUnicode = (str) => {
+    newStr = ""
+    for (var i = 0; i < str.length; i++) {
+        newStr += str.charCodeAt(i) + ' '
+    }
+    return newStr
+}
+
 GTARequest = (router, req, res, renderPage, renderPageParms) => {
     console.log(req.params)
 
@@ -29,7 +39,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
     }
     mysqlCallback = (result) => {
         console.log("result is",result);
-        if (result) {
+        if (result || debugModus) {
             res.setHeader('Access-Control-Allow-Origin', 'http://185.62.188.120:3001/');
 
             res.render(renderPage, renderPageParms);
