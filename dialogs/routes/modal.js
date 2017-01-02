@@ -14,12 +14,14 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
             yes: JSON.stringify({
                 command: 'CEF_CLOSE',
                 args: 'modalCEF',
-                isFnc: false
+                isFnc: false,
+                isObj: false
             }),
             no: JSON.stringify({
                 command: 'PLAYER_DISCONNECT',
                 args: "Bye",
-                isFnc: false
+                isFnc: false,
+                isObj: false
             })
         }
     })

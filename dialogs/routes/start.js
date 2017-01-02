@@ -17,7 +17,9 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         buttons: {
             abbrechen: {
                 command: 'PLAYER_DISCONNECT',
-                args: "Registrierung abgebrochen"
+                args: "Registrierung abgebrochen",
+                isFnc: false,
+                isObj: false
             },
             erstellen: {
                 command: 'REGISTER',
@@ -26,6 +28,7 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
                     nachname: "$('#nachname').val()",
                     gender: "$('#Mann').hasClass('is-checked')"
                 })),
+                isFnc: false,
                 isObj: true
             }
         }
