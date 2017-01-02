@@ -51,7 +51,6 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
     mysqlVerify(req.params.playerID, req.params.sessionID)
 }
 
-var WebTest = require('./routes/WebTest');
 var modal = require('./routes/modal');
 var debug = require('./routes/debug');
 var start = require('./routes/start');
@@ -72,7 +71,6 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/WebTest', WebTest);
 app.use('/modal', modal);
 app.use('/debug', debug);
 app.use('/start', start);
