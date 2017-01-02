@@ -15,18 +15,18 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         playerID: req.params.playerID,
         sessionID: req.params.sessionID,
         buttons: {
-            execute: JSON.stringify({
+            execute: {
                 command: 'ADMIN_EVAL',
                 args: toUnicode('$("#code").val()'),
                 isFnc: true,
                 isObj: false
-            }),
-            close: JSON.stringify({
+            },
+            close: {
                 command: 'CEF_CLOSE',
                 args: "debugCEF",
                 isFnc: false,
                 isObj: false
-            })
+            }
         }
     })
 })

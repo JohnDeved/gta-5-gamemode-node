@@ -11,18 +11,18 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         icon: req.params.icon || 'warning sign icon',
         background: req.params.background || 'rgba(0, 0, 0, 0)',
         buttons: {
-            yes: JSON.stringify({
+            yes: {
                 command: 'CEF_CLOSE',
                 args: 'modalCEF',
                 isFnc: false,
                 isObj: false
-            }),
-            no: JSON.stringify({
+            },
+            no: {
                 command: 'PLAYER_DISCONNECT',
                 args: "Bye",
                 isFnc: false,
                 isObj: false
-            })
+            }
         }
     })
 })
