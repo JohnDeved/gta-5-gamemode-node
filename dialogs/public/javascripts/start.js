@@ -7,6 +7,8 @@ $('#erstellen').click(function() {
     $('#erstellen').removeClass('basic')
     $('#erstellen').removeClass('green')
     $('#erstellen').css('pointer-events', 'none')
+    $('#vorname').attr('disabled', true)
+    $('#nachname').attr('disabled', true)
 })
 
 checkReady = function() {
