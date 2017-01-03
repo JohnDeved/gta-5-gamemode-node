@@ -1,8 +1,5 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+.ui.form .selection.dropdown>.menu {
+    border-top-width: 5px!important;
+    border-bottom-width: 5px!important;
+    border-radius: 0!important;
 }
