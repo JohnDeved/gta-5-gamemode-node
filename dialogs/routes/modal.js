@@ -1,6 +1,6 @@
-var express = require('express');
-var request = require('request');
-var router = express.Router();
+var express = require('express')
+var request = require('request')
+var router = express.Router()
 
 router.get('/:playerID?/:sessionID?/:title?/:text?', function(req, res, next) {
     GTARequest(router, req, res, 'modal', {
@@ -27,4 +27,4 @@ router.get('/:playerID?/:sessionID?/:title?/:text?', function(req, res, next) {
     })
 })
 
-module.exports = router;
+module.exports = router

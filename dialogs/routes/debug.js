@@ -1,6 +1,6 @@
-var express = require('express');
-var request = require('request');
-var router = express.Router();
+var express = require('express')
+var request = require('request')
+var router = express.Router()
 
 var toUnicode = (str) => {
     newStr = ""
@@ -31,4 +31,4 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
     })
 })
 
-module.exports = router;
+module.exports = router
