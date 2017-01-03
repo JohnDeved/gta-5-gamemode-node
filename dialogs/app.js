@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var request = require('request')
 
-debugModus = true
+debugModus = false
 
 var toUnicode = (str) => {
     newStr = ""
@@ -35,11 +35,10 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
               mysqlCallback(body == "1")
           }
       })
-      return true;
     }
     mysqlCallback = (result) => {
         console.log("result is",result)
-        if (result || debugModus) {
+        if ((result || debugModus) && (req.params.playerID && req.params.sessionID)) {
             res.setHeader('Access-Control-Allow-Origin', 'http://185.62.188.120:3001/');
 
             res.render(renderPage, renderPageParms)
