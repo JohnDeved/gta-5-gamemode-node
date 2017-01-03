@@ -9,9 +9,9 @@
     },
     "output": {
       "packaged": "..\\public\\ui\\",
-      "uncompressed": "dist\\components\\",
-      "compressed": "dist\\components\\",
-      "themes": "dist/themes/"
+      "uncompressed": "..\\public\\components\\",
+      "compressed": "..\\public\\components\\",
+      "themes": "..\\public\\themes\\"
     },
     "clean": "dist/"
   },
