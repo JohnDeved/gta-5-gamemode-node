@@ -30,7 +30,7 @@
             <% } %>
             console.log(args);
             $.ajax({
-                url: 'http://185.62.188.120:3001/',
+                url: '<%=config.UDPlistener %>',
                 type: 'POST',
                 dataType: 'STRING',
                 data: JSON.stringify({

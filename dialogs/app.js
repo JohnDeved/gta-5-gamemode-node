@@ -5,8 +5,7 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var request = require('request')
-
-debugModus = false
+var config = require('./config.json')
 
 var toUnicode = (str) => {
     newStr = ''
@@ -21,7 +20,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
 
     mysqlVerify = (socialclub_id, session_id) => {
         request({
-            url: 'http://185.62.188.120:3001/VerifyUser',
+            url: config.UDPlistener + 'VerifyUser',
             method: 'post',
             form: {
                 socialclub_id: socialclub_id,
@@ -38,9 +37,9 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
     }
     mysqlCallback = (result) => {
         console.log('result is', result)
-        if ((result || debugModus) && (req.params.playerID && req.params.sessionID)) {
-            res.setHeader('Access-Control-Allow-Origin', 'http://185.62.188.120:3001/')
-
+        if ((result || config.debugModus) && (req.params.playerID && req.params.sessionID)) {
+            res.setHeader('Access-Control-Allow-Origin', config.UDPlistener)
+            renderPageParms.config = config
             res.render(renderPage, renderPageParms)
         } else {
             console.log('ERROR:', result)
