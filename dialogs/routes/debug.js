@@ -3,7 +3,7 @@ var request = require('request')
 var router = express.Router()
 
 var toUnicode = (str) => {
-    newStr = ""
+    newStr = ''
     for (var i = 0; i < str.length; i++) {
         newStr += str.charCodeAt(i) + ' '
     }
@@ -23,7 +23,7 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
             },
             close: {
                 command: 'CEF_CLOSE',
-                args: "debugCEF",
+                args: 'debugCEF',
                 isFnc: false,
                 isObj: false
             }

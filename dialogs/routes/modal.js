@@ -19,7 +19,7 @@ router.get('/:playerID?/:sessionID?/:title?/:text?', function(req, res, next) {
             },
             no: {
                 command: 'PLAYER_DISCONNECT',
-                args: "Bye",
+                args: 'Bye',
                 isFnc: false,
                 isObj: false
             }
