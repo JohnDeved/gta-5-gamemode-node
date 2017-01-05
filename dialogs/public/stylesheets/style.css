@@ -3,3 +3,37 @@
     border-bottom-width: 5px!important;
     border-radius: 0!important;
 }
+
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+
+.input-container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.radio-container {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.ui.modal>.header {
+        border-bottom: 1px solid rgba(34,36,38,.9);
+}
+
+.ui.modal>.actions {
+        border-top: 1px solid rgba(34,36,38,.9);
+        padding: 20px 0;
+}
+
+.mdl-radio__outer-circle {
+    border: 2px solid rgba(255, 255, 255, 0.54);
+}

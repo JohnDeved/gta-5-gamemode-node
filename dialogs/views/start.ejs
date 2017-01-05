@@ -15,36 +15,46 @@
         <div class="ui icon header">
         </div>
         <div class="content">
-            <form action="#">
-              <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" pattern="-?[A-zÄäÜüÖöß]{3,15}(\.[A-zÄäÜüÖöß]+)?" id="vorname" style="border-bottom-color: grey" onkeyup="checkReady()" >
-                <label class="mdl-textfield__label" for="sample1" style="color: white" >Vorname</label>
-                <span class="mdl-textfield__error">ungültiger Vorname (A-z, min 3, max 15)</span>
-              </div>
-              <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" pattern="-?[A-zÄäÜüÖöß]{3,15}(\.[A-zÄäÜüÖöß]+)?" id="nachname" style="border-bottom-color: grey" onkeyup="checkReady()" >
-                <label class="mdl-textfield__label" for="sample1" style="color: white" >Nachname</label>
-                <span class="mdl-textfield__error">ungültiger Nachname (A-z, min 3, max 15)</span>
-              </div>
-            </form>
-            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1" style="margin-right: 10px;" id="Mann">
-              <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-              <span class="mdl-radio__label">Männlich</span>
-            </label>
-            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2" style="margin-right: 10px;" id="Frau">
-              <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-              <span class="mdl-radio__label">Weiblich</span>
-            </label>
+            <div class="input-container">
+                <form action="#">
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[A-zÄäÜüÖöß]{3,15}(\.[A-zÄäÜüÖöß]+)?" id="vorname" style="border-bottom-color: grey" onkeyup="checkReady()" >
+                    <label class="mdl-textfield__label" for="sample1" style="color: white" >Vorname</label>
+                    <span class="mdl-textfield__error">ungültiger Vorname (A-z, min 3, max 15)</span>
+                  </div>
+                  <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[A-zÄäÜüÖöß]{3,15}(\.[A-zÄäÜüÖöß]+)?" id="nachname" style="border-bottom-color: grey" onkeyup="checkReady()" >
+                    <label class="mdl-textfield__label" for="sample1" style="color: white" >Nachname</label>
+                    <span class="mdl-textfield__error">ungültiger Nachname (A-z, min 3, max 15)</span>
+                  </div>
+                </form>
+            </div>
+            <div class="radio-container">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1" style="margin-right: 10px;" id="Mann">
+                  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+                  <span class="mdl-radio__label">Männlich</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2" style="margin-right: 10px;" id="Frau">
+                  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+                  <span class="mdl-radio__label">Weiblich</span>
+                </label>
+            </div>
         </div>
         <div class="actions">
-            <div id="abbrechen" class="ui red basic inverted button left floated" >
+            <div id="abbrechen" class="ui red basic inverted button right floated" >
                 <i class="remove icon"></i> Abbrechen
             </div>
-            <div id="erstellen" class="ui basic inverted button left floated" style="pointer-events: none" >
+            <div id="erstellen" class="ui basic inverted button right floated" style="pointer-events: none" >
                 <i class="checkmark icon"></i> Erstellen
             </div>
         </div>
     </div>
+    <video autoplay loop class="video-background" muted>
+        <source src="/videos/gta_med.mp4" type="video/mp4">
+    </video>
+    <audio autoplay loop class="audio-background">
+        <source src="/audios/gta_high.mp3" type="audio/mp3">
+    </audio>
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js" integrity="sha256-PCfu4+fnQrp4wNmVbjN1eaX4LbOvOejab0UOhjLezrw=" crossorigin="anonymous"></script>
