@@ -52,6 +52,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
 var modal = require('./routes/modal')
 var debug = require('./routes/debug')
 var start = require('./routes/start')
+var canvas = require('./routes/canvas')
 
 var app = express()
 
@@ -72,6 +73,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/modal', modal)
 app.use('/debug', debug)
 app.use('/start', start)
+app.use('/canvas', canvas)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
