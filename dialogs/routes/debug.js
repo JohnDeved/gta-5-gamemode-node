@@ -17,7 +17,7 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         buttons: {
             execute: {
                 command: 'ADMIN_EVAL',
-                args: toUnicode('$("#code").val()'),
+                args: toUnicode('[$("#code").val(),$("#targets").val()]'),
                 isFnc: true,
                 isObj: false
             },
