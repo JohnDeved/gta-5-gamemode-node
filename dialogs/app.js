@@ -37,7 +37,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms, page) => {
     }
     mysqlCallback = (result) => {
         console.log('result is', result)
-        if ((result || config.debugModus) && (req.params.playerID && req.params.sessionID)) {
+        if ((result != 0 || config.debugModus) && (req.params.playerID && req.params.sessionID)) {
             res.setHeader('Access-Control-Allow-Origin', config.UDPlistener)
             renderPageParms.config = config
             renderPageParms.result = result
