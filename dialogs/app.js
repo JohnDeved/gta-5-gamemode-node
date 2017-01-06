@@ -99,7 +99,7 @@ app.use(function(err, req, res, next) {
     if (config.debugModus) {
         res.render('error')
     } else {
-        res.render('invalid')
+        res.render('server error. contact DevSec')
     }
 })
 
