@@ -1,4 +1,4 @@
 {
-    "debugModus": false,
+    "debugModus": true,
     "UDPlistener": "http://185.62.188.120:3001/"
 }

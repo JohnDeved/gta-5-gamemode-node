@@ -1,7 +1,7 @@
 .ui.form .selection.dropdown>.menu {
-    border-top-width: 5px!important;
-    border-bottom-width: 5px!important;
-    border-radius: 0!important;
+    border-top-width: 1px!important;
+    border-bottom-width: 1px!important;
+    border-radius: 0!important; 
 }
 
 .video-background {

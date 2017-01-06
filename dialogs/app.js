@@ -15,12 +15,12 @@ var toUnicode = (str) => {
     return newStr
 }
 
-GTARequest = (router, req, res, renderPage, renderPageParms) => {
+GTARequest = (router, req, res, renderPage, renderPageParms, page) => {
     console.log(req.params)
 
     mysqlVerify = (socialclub_id, session_id) => {
         request({
-            url: config.UDPlistener + 'VerifyUser',
+            url: config.UDPlistener + page || 'VerifyUser',
             method: 'post',
             form: {
                 socialclub_id: socialclub_id,
@@ -31,7 +31,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
                 mysqlCallback(false)
             } else {
                 console.log(response.statusCode, body)
-                mysqlCallback(body == '1')
+                mysqlCallback(body)
             }
         })
     }
@@ -40,6 +40,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms) => {
         if ((result || config.debugModus) && (req.params.playerID && req.params.sessionID)) {
             res.setHeader('Access-Control-Allow-Origin', config.UDPlistener)
             renderPageParms.config = config
+            renderPageParms.result = result
             res.render(renderPage, renderPageParms)
         } else {
             console.log('ERROR:', result)
