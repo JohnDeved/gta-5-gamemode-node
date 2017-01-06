@@ -29,16 +29,6 @@
     border: 2px solid rgba(255, 255, 255, 0.54);
 }
 
-* {
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-textarea, input {
-    -webkit-user-select: all !important;
-    user-select: all !important;
-}
-
 .shopdrop {
     width: 100%
 }
