@@ -39,7 +39,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms, page) => {
         console.log('result is', result)
         console.log('playerID is', req.params.playerID)
         console.log('sessionID is', req.params.sessionID)
-        console.log('if is', (result != 0 || config.debugModus) && (req.params.playerID && req.params.sessionID))
+        console.log('if is', ((result != 0 || config.debugModus) && (req.params.playerID && req.params.sessionID)))
         if ((result != 0 || config.debugModus) && (req.params.playerID && req.params.sessionID)) {
             res.setHeader('Access-Control-Allow-Origin', config.UDPlistener)
             renderPageParms.config = config
