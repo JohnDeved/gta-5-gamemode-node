@@ -28,3 +28,16 @@
 .mdl-radio__outer-circle {
     border: 2px solid rgba(255, 255, 255, 0.54);
 }
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.shopdrop {
+    width: 100%
+}
