@@ -6,20 +6,26 @@ router.get('/:playerID?/:sessionID?', function(req, res, next) {
         playerID: req.params.playerID,
         sessionID: req.params.sessionID,
         buttons: {
-            yes: {
+            buy: {
                 command: 'CEF_CLOSE',
-                args: 'modalCEF',
+                args: 'clothCEF',
                 isFnc: false,
                 isObj: false
             },
-            no: {
-                command: 'PLAYER_DISCONNECT',
-                args: 'Bye',
+            select: {
+                command: 'CEF_CLOSE',
+                args: 'clothCEF',
+                isFnc: false,
+                isObj: false
+            },
+            close: {
+                command: 'CEF_CLOSE',
+                args: 'clothCEF',
                 isFnc: false,
                 isObj: false
             }
         }
-    })
+    }, "getAllClothes")
 })
 
 module.exports = router

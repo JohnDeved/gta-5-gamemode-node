@@ -19,59 +19,24 @@
             <div class="meta">
                 <span class="date">St. Nigger Street 24a</span>
             </div>
-            <select class="ui dropdown shopdrop" style="">
-              <option value="">Clothing</option>
-              <option value="1">Gesicht</option>
-              <option value="0">Maske</option>
-              <option value="1">Haare</option>
-              <option value="0">Hose</option>
-              <option value="0">Schuhe</option>
-              <option value="0">Shirt</option>
-              <option value="0">Unterhemder</option>
-              <option value="0">Arme</option>
-              <option value="0">Rucksäcke</option>
-            </select>
+            <div class="ui three item menu">
+                <a class="item active">Shirts</a>
+                <a class="item">Hosen</a>
+                <a class="item">Schuhe</a>
+            </div>
             <div class="ui relaxed divided list animated">
+                <% for (var i = 0; i < result.m_shirt.length; i++) { %>
                 <div class="item">
                     <div class="right floated content">
-                        <div class="ui button inverted blue">Select</div>
+                        <div class="ui button inverted green" value="<%=result.m_shirt[i].class %>">buy</div>
                     </div>
                     <i class="large github middle aligned icon"></i>
                     <div class="content">
-                        Oculus Rift
-                        <div class="description">500$</div>
+                        <%=result.m_shirt[i].disp %>
+                        <div class="description"><%=result.m_shirt[i].price %>$</div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="right floated content">
-                        <div class="ui button inverted red">Buy</div>
-                    </div>
-                    <i class="large github middle aligned icon"></i>
-                    <div class="content">
-                        Nvidia Gaming PC
-                        <div class="description">1200$</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="right floated content">
-                        <div class="ui button inverted green">Buy</div>
-                    </div>
-                    <i class="large github middle aligned icon"></i>
-                    <div class="content">
-                        AMD Gaming PC
-                        <div class="description">1000$</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="right floated content">
-                        <div class="ui button inverted green">Buy</div>
-                    </div>
-                    <i class="large github middle aligned icon"></i>
-                    <div class="content">
-                        Oculus Rift
-                        <div class="description">500$</div>
-                    </div>
-                </div>
+                <% } %>
             </div>
         </div>
         <div class="extra content" style="background-color: #2e3440">
@@ -84,6 +49,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="/ui/semantic.min.js"></script>
     <script src="/javascripts/clothing.js"></script>
+    <% include templates/request %>
 </body>
 
 </html>
