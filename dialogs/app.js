@@ -22,7 +22,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms, page) => {
         request({
             url: config.UDPlistener + page || 'VerifyUser',
             method: 'post',
-            form: {
+            json: {
                 socialclub_id: socialclub_id,
                 session_id: session_id
             }
