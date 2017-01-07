@@ -25,10 +25,19 @@
                 <a class="item">Schuhe</a>
             </div>
             <div class="ui relaxed divided list animated">
-                <% for (var i = 0; i < result.m_shirt.length; i++) { %>
+            <% for (var i = 0; i < result.m_shirt.length; i++) { %>
                 <div class="item">
                     <div class="right floated content">
                         <div class="ui button inverted green" value="<%=result.m_shirt[i].class %>">buy</div>
+                    </div>
+                    <div class="right floated ui floating dropdown labeled search icon button">
+                        <i class="wrench icon"></i>
+                        <span class="text">Style</span>
+                        <div class="menu">
+                        <% for (var j = 0; j < result.m_shirt[i].colors.split(',').length; j++) { %>
+                            <div class="item"><%=result.m_shirt[i].colors.split(',')[j] %></div>
+                        <% } %>
+                        </div>
                     </div>
                     <i class="large github middle aligned icon"></i>
                     <div class="content">
@@ -36,11 +45,11 @@
                         <div class="description"><%=result.m_shirt[i].price %>$</div>
                     </div>
                 </div>
-                <% } %>
+            <% } %>
             </div>
         </div>
         <div class="extra content" style="background-color: #2e3440">
-            <div class="ui red inverted button left floated">
+            <div class="ui red inverted button left floated" id="close">
                 <i class="remove icon"></i> schließen
             </div>
         </div>
