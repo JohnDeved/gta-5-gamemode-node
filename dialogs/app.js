@@ -20,7 +20,7 @@ GTARequest = (router, req, res, renderPage, renderPageParms, page) => {
 
     mysqlVerify = (socialclub_id, session_id) => {
         request({
-            url: config.UDPlistener + page || 'VerifyUser',
+            url: config.UDPlistener + (page || 'VerifyUser'),
             method: 'post',
             json: {
                 socialclub_id: socialclub_id,
