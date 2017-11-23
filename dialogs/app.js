@@ -58,6 +58,7 @@ var debug = require('./routes/debug')
 var start = require('./routes/start')
 var canvas = require('./routes/canvas')
 var clothing = require('./routes/clothing')
+var clothing = require('./routes/grid')
 
 var app = express()
 
@@ -80,6 +81,7 @@ app.use('/debug', debug)
 app.use('/start', start)
 app.use('/canvas', canvas)
 app.use('/clothing', clothing)
+app.use('/grid', clothing)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/ui/semantic.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style media="screen">
+        body {
+            background-image: url("https://gtanet.work/images/pic%20(28).jpg");
+        }
+
+        .grid-container {
+            transition: right 1s;
+            bottom: 100px;
+            right: -30vw;
+            width: 30vw;
+            position: absolute;
+            color: white;
+        }
+
+        .menu-container .column:HOVER {
+            /*background-color: grey !important;*/
+            color: #CD5C5C;
+            border-top-color: #CD5C5C;
+            background-color: rgba(20, 20, 20, 0.60);
+        }
+
+        .menu-container .column {
+            transition: color .5s, border .5s, background .5s;
+            background-color: rgba(20, 20, 20, 0.50);
+            border-top: solid 2px white;
+            margin-top: -1rem !important;
+            margin-bottom: -1rem !important;
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+            cursor: pointer;
+        }
+
+        .icons {
+            font-size: 2em;
+        }
+
+        .icons i {
+            vertical-align: middle;
+            line-height: 100%;
+        }
+
+        .object-container {
+            background-color: rgba(20, 20, 20, 0.80);
+            height: 70vh;
+            margin-bottom: 5px;
+            box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, .2), 1px 3px 15px 2px rgba(0, 0, 0, .2);
+        }
+
+        .object-container .column {
+            margin: 2px;
+            border: solid 1px grey;
+            margin-top: -1rem !important;
+            margin-bottom: -1rem !important;
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .menu-container {
+            box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, .2), 1px 3px 15px 2px rgba(0, 0, 0, .2);
+        }
+
+        .baractive {
+            color: #e83939 !important;
+            border-top-color: #e83939 !important;
+            background-color: rgba(20, 20, 20, 0.80) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="object-container">
+        </div>
+        <div class="menu-container">
+            <div class="ui equal width center aligned padded grid">
+                <div class="row icons">
+                    <div class="column baractive" phone>
+                        <i class="phone icon"></i>
+                    </div>
+                    <div class="column" items>
+                        <i class="briefcase icon"></i>
+                    </div>
+                    <div class="column" level>
+                        <i class="bar chart icon"></i>
+                    </div>
+                    <div class="column" vehicle>
+                        <i class="car icon"></i>
+                    </div>
+                    <div class="column" infos>
+                        <i class="info icon"></i>
+                    </div>
+                    <div class="column" options>
+                        <i class="cogs icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/ui/semantic.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.menu-container .column').click(function() {
+                switch (true) {
+                    case ($(this).attr('phone') == ''):
+                        console.log('phone clicked');
+                        $('.object-container').html('phone')
+                        break;
+                    case ($(this).attr('items') == ''):
+                        console.log('items clicked');
+                        $('.object-container').html('items')
+                        break;
+                    case ($(this).attr('level') == ''):
+                        console.log('level clicked');
+                        $('.object-container').html('level')
+                        break;
+                    case ($(this).attr('vehicle') == ''):
+                        console.log('vehicle clicked');
+                        $('.object-container').html('vehicle')
+                        break;
+                    case ($(this).attr('infos') == ''):
+                        console.log('infos clicked');
+                        $('.object-container').html('infos')
+                        break;
+                    case ($(this).attr('options') == ''):
+                        console.log('options clicked');
+                        $('.object-container').html('options')
+                        break;
+                    default:
+                        console.log('undefined clicked');
+                        $('.object-container').html('undefined')
+                }
+                $('.menu-container .column').removeClass('baractive')
+                $(this).addClass('baractive')
+            })
+            menuFadeIn();
+        })
+
+        function menuFadeIn() {
+            $('.grid-container').css('right', '0')
+        }
+
+        function menuFadeOut() {
+            $('.grid-container').css('right', '-30vw')
+        }
+    </script>
+</body>
+
+</html>
